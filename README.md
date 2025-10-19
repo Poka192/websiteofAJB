@@ -1,2 +1,0 @@
-# websiteofAJB
-aasdasdasd
