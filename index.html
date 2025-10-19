@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Chance — 모던 도박 시뮬레이터</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <h1>Neon Chance</h1>
+      <p class="tag">작은 운에 올인해보세요 — 잃어도 책임지지 않습니다</p>
+    </header>
+
+    <section class="balance-card">
+      <div class="balance">
+        <div class="label">잔액</div>
+        <div id="balance" class="amount">0원</div>
+      </div>
+      <div class="controls">
+        <input id="depositAmt" type="number" min="1" placeholder="충전할 금액" />
+        <button id="depositBtn" class="btn primary">충전</button>
+        <button id="resetBtn" class="btn ghost">초기화</button>
+      </div>
+    </section>
+
+    <section class="games">
+      <article class="game card" id="coinFlip">
+        <h2>코인플립</h2>
+        <p class="muted">앞/뒤를 맞히면 2배</p>
+        <div class="play-row">
+          <input id="cfAmount" type="number" min="100" placeholder="베팅 금액" />
+          <select id="cfPick"><option value="heads">앞</option><option value="tails">뒤</option></select>
+          <button class="btn play" data-game="coin">돌려보기</button>
+        </div>
+        <div class="log" id="cfLog"></div>
+      </article>
+
+      <article class="game card" id="slots">
+        <h2>슬롯</h2>
+        <p class="muted">같은 아이콘 3개면 5배!</p>
+        <div class="play-row">
+          <input id="slotAmount" type="number" min="100" placeholder="베팅 금액" />
+          <button class="btn play" data-game="slot">스핀</button>
+        </div>
+        <div class="slot-machine" id="slotMachine">
+          <div class="reel" data-pos="0">🍒</div>
+          <div class="reel" data-pos="1">🍋</div>
+          <div class="reel" data-pos="2">🔔</div>
+        </div>
+        <div class="log" id="slotLog"></div>
+      </article>
+
+      <article class="game card" id="quickDraw">
+        <h2>퀵드로우</h2>
+        <p class="muted">랜덤 숫자를 맞히면 큰 보상</p>
+        <div class="play-row">
+          <input id="qdAmount" type="number" min="100" placeholder="베팅 금액" />
+          <input id="qdGuess" type="number" min="0" max="9" placeholder="0-9" />
+          <button class="btn play" data-game="quick">도전</button>
+        </div>
+        <div class="log" id="qdLog"></div>
+      </article>
+    </section>
+
+    <footer class="foot">
+      <small>개인 프로젝트 — 연습용 시뮬레이터입니다. 실제 도박과 무관합니다.</small>
+    </footer>
+  </main>
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>

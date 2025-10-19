@@ -1,0 +1,20 @@
+# Python / general
+.venv/
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Databases / local
+user_data.db
+
+# images or large assets not needed
+*.png
+*.jpg
